@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=title.0">
     <title>Library</title>
 
     <link rel="stylesheet" href="styles/styles.css">
@@ -15,6 +15,25 @@
     </div>
     <div class="book-edit">
         <button class="new-book">NEW BOOK</button>
+    </div>
+    <div class="book-form">
+        <form action="" method="post">
+            <fieldset>
+                <legend>Insert a new book</legend>
+                
+                <label for="title">Book Title</label>
+                <input type="text" id="title" placeholder="Book title" name="title">
+                
+                <label for="author">Book Author</label>
+                <input type="text" id="author" placeholder="Book author" name="author">
+                
+                <label for="pages">Amount of pages</label>
+                <input type="number" name="pages" id="pages" value="1" min="1">
+
+                <label for="release-year">Year of Release</label>
+                <input type="number" name="release-year" id="release-year" min="1" max="9999" value="2024">
+            </fieldset>
+        </form>
     </div>
 </body>
 </html>
