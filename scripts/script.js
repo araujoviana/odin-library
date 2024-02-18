@@ -7,6 +7,7 @@ const bookshelf = document.querySelector(".bookshelf");
 const newBookButton = document.querySelector(".new-book");
 const bookForm = document.querySelector(".book-form");
 const newBookEntry = document.querySelector("#submit");
+const bookArray = [];
 
 function Book(title, author, pages, releaseYear, read = false) {
   this.title = title;
@@ -17,18 +18,17 @@ function Book(title, author, pages, releaseYear, read = false) {
 }
 
 function addBookToLibrary() {
-  // TODO: Adds books to the library
     let userBook = new Book(
-        bookForm.querySelector("#title"),
-        bookForm.querySelector("#author"),
-        bookForm.querySelector("#pages"),
-        bookForm.querySelector("#release-year"),
-        bookForm.querySelector("#read")
+        bookForm.querySelector("#title").value,
+        bookForm.querySelector("#author").value,
+        bookForm.querySelector("#pages").value,
+        bookForm.querySelector("#release-year").value,
+        bookForm.querySelector("#read").value
     );
-    console.table(Book);
+    bookArray.push(userBook);
 }
 
-function displayEachBook(bookArray) {
+function displayEachBook() {
     for (const book of bookArray) {
         // TODO: display books in DOM
     }
