@@ -5,6 +5,8 @@
 const myLibrary = [];
 const bookshelf = document.querySelector(".bookshelf");
 const newBookButton = document.querySelector(".new-book");
+const bookForm = document.querySelector(".book-form");
+const newBookEntry = document.querySelector("#submit");
 
 function Book(title, author, pages, releaseYear, read = false) {
   this.title = title;
@@ -16,6 +18,14 @@ function Book(title, author, pages, releaseYear, read = false) {
 
 function addBookToLibrary() {
   // TODO: Adds books to the library
+    let userBook = new Book(
+        bookForm.querySelector("#title"),
+        bookForm.querySelector("#author"),
+        bookForm.querySelector("#pages"),
+        bookForm.querySelector("#release-year"),
+        bookForm.querySelector("#read")
+    );
+    console.table(Book);
 }
 
 function displayEachBook(bookArray) {
@@ -25,8 +35,6 @@ function displayEachBook(bookArray) {
 }
 
 newBookButton.addEventListener('click', () => {
-    // TODO: add form for inserting new books
-    const bookForm = document.querySelector(".book-form");
     if (bookForm.style.display == 'none') {
         bookForm.style.display = 'block'; // Maybe change this
     }
@@ -34,6 +42,14 @@ newBookButton.addEventListener('click', () => {
         bookForm.style.display = 'none';
     }
     
+});
+
+bookForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+})
+
+newBookEntry.addEventListener('click', () => {
+    addBookToLibrary();
 });
 
 // Dummy data
