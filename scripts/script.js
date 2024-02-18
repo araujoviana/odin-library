@@ -1,6 +1,3 @@
-// TODO: Add a button for deleting book entries
-// TODO: Add a button for toggling its read status
-
 
 const myLibrary = [];
 const bookshelf = document.querySelector(".bookshelf");
@@ -58,7 +55,18 @@ function displayEachBook() {
             displayEachBook();
         });
 
+        const deleteEntry = document.createElement('button');
+        deleteEntry.classList.add("delete-entry");
+        deleteEntry.textContent = "Delete entry";
+
+        deleteEntry.addEventListener('click', () => {
+            bookIndex = bookArray.indexOf(book);
+            bookArray.splice(bookIndex,1);
+            displayEachBook();
+        });
+
         newBook.appendChild(readToggle);
+        newBook.appendChild(deleteEntry);
     }
 }
 
