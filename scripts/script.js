@@ -54,9 +54,14 @@ newBookEntry.addEventListener('click', () => {
 
 // Dummy data
 let book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 300, 1925);
+bookArray.push(book1);
 let book2 = new Book("To Kill a Mockingbird", "Harper Lee", 350, 1960, true);
+bookArray.push(book2);
 let book3 = new Book("1984", "George Orwell", 400, 1949);
+bookArray.push(book3);
 let book4 = new Book("The Catcher in the Rye", "J.D. Salinger", 240, 1951, true);
+bookArray.push(book4);
 let book5 = new Book("Pride and Prejudice", "Jane Austen", 320, 1813);
+bookArray.push(book5);
 
 displayEachBook(bookshelf);
