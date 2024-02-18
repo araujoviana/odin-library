@@ -26,11 +26,27 @@ function addBookToLibrary() {
         bookForm.querySelector("#read").value
     );
     bookArray.push(userBook);
+    displayEachBook();
 }
 
 function displayEachBook() {
+    bookshelf.innerHTML = '';
+    
     for (const book of bookArray) {
-        // TODO: display books in DOM
+        // TODO: display books in DOM in a better way
+        console.table(book);
+
+        const newBook = document.createElement('div');
+        // Placeholder
+        newBook.textContent = `
+            ${book.title} - 
+            ${book.author} - 
+            ${book.pages} - 
+            ${book.releaseYear} -
+            ${book.read} 
+        `;
+
+        bookshelf.appendChild(newBook); 
     }
 }
 
