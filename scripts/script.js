@@ -33,10 +33,11 @@ function displayEachBook() {
     bookshelf.innerHTML = '';
     
     for (const book of bookArray) {
-        // TODO: display books in DOM in a better way
         console.table(book);
 
         const newBook = document.createElement('div');
+        newBook.classList.add("book-entry");
+
         // Placeholder
         newBook.textContent = `
             ${book.title} - 
@@ -47,6 +48,17 @@ function displayEachBook() {
         `;
 
         bookshelf.appendChild(newBook); 
+
+        const readToggle = document.createElement('button');
+        readToggle.classList.add("read-toggle");
+        readToggle.textContent = "Toggle Read";
+
+        readToggle.addEventListener('click', () => {
+            book.read = !book.read;
+            displayEachBook();
+        });
+
+        newBook.appendChild(readToggle);
     }
 }
 
